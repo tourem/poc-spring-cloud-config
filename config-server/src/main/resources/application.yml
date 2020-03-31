@@ -1,0 +1,22 @@
+server:
+  port: 8888
+spring:
+  security:
+    user:
+      name: root
+      password: s3cr3t
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/tourem/config-management.git
+          repos:
+            dev:
+              pattern: '*/dev'
+              cloneOnStart: true
+              uri: https://github.com/tourem/config-management.git
+              search-paths: config-team-larbotech
+            prod:
+              pattern: '*/prod'
+              cloneOnStart: false
+              uri: https://github.com/tourem/config-server-prod.git

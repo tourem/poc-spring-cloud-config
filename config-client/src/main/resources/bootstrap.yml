@@ -1,0 +1,19 @@
+#encrypt:
+#  keyStore:
+#    location: classpath:config-server.jks
+#    password: my-s70r3-s3cr3t
+#    alias: config-server-key
+#    secret: my-k34-s3cr3t
+spring:
+  profiles:
+    active: prod
+  application:
+    name: config-client
+  cloud:
+    config:
+      uri: http://localhost:8888
+      username: root
+      password: s3cr3t
+
+
+# By default, Config Server connects to http://localhost:8888 with env=default and label=master. To override, configure as bellow:
